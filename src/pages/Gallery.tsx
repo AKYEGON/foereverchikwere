@@ -3,37 +3,66 @@ import { Heart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Gallery = () => {
-  // Placeholder for photo uploads - in a real app, this would connect to a backend
-  const placeholderPhotos = [
+  const photos = [
     {
       id: 1,
+      src: "/lovable-uploads/a3f68482-3397-445e-bd7c-e41af74a237b.png",
       caption: "Your radiant smile that stops time",
-      placeholder: "Upload your most beautiful photo here"
+      description: "Together we create magic, my love and my light"
     },
     {
       id: 2, 
-      caption: "The way you laugh with your whole heart",
-      placeholder: "A moment of pure joy captured"
+      src: "/lovable-uploads/7f3dd896-7cfc-475a-8de9-c7e922130e79.png",
+      caption: "The way you glow in golden hour",
+      description: "Natural beauty that needs no filter, perfect as you are"
     },
     {
       id: 3,
-      caption: "Your eyes that hold galaxies",
-      placeholder: "Those eyes that see straight to my soul"
+      src: "/lovable-uploads/64fff9b6-a2d7-4ae0-8e52-14ca68612bfe.png",
+      caption: "Sending love through every gesture",
+      description: "Even your playful moments take my breath away"
     },
     {
       id: 4,
-      caption: "Dancing in moonlight, my queen",
-      placeholder: "You in your element, free and beautiful"
+      src: "/lovable-uploads/622d664c-bcb6-4ee9-ac02-9c7fa9008053.png",
+      caption: "Natural elegance, effortless grace",
+      description: "The earth itself seems to celebrate your presence"
     },
     {
       id: 5,
-      caption: "Morning coffee, morning you",
-      placeholder: "Perfect moments in everyday life"
+      src: "/lovable-uploads/0bdef80d-41ad-4c4a-b574-44adea25db66.png",
+      caption: "Joy personified, happiness incarnate",
+      description: "Your laughter is the soundtrack to my soul"
     },
     {
       id: 6,  
-      caption: "The way you glow in golden hour",
-      placeholder: "Nature's spotlight on perfection"
+      src: "/lovable-uploads/16f077c8-c337-41a7-8ab5-50bd68ac7f25.png",
+      caption: "Profile of perfection",
+      description: "Every angle tells the story of divine creation"
+    },
+    {
+      id: 7,
+      src: "/lovable-uploads/68767f82-ed55-49a8-8d31-7b56c4b04206.png",
+      caption: "Free spirit, beautiful soul",
+      description: "Movement and grace in perfect harmony"
+    },
+    {
+      id: 8,
+      src: "/lovable-uploads/d5c21b43-a5b1-47ab-92c8-5b53332832d1.png",
+      caption: "Artistic beauty in every light",
+      description: "Even filtered in green, your beauty shines through"
+    },
+    {
+      id: 9,
+      src: "/lovable-uploads/b700d6ec-ba6f-403c-a6f5-ff15e6229a68.png",
+      caption: "Elegance defined, beauty refined",
+      description: "Traditional architecture pales beside your natural beauty"
+    },
+    {
+      id: 10,
+      src: "/lovable-uploads/b06afff1-5ea1-44a5-a1d1-bc52f55d7c60.png",
+      caption: "Love reflected in our eyes",
+      description: "Together we are complete, forever intertwined"
     }
   ];
 
@@ -50,21 +79,23 @@ const Gallery = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {placeholderPhotos.map((photo) => (
+          {photos.map((photo) => (
             <Card key={photo.id} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 group overflow-hidden">
               <CardContent className="p-0">
-                <div className="aspect-square bg-gradient-to-br from-pink-500/20 to-purple-600/20 flex items-center justify-center border-b border-white/10">
-                  <div className="text-center p-8">
-                    <Heart className="w-12 h-12 text-pink-400/60 mx-auto mb-4 group-hover:animate-heart-beat" />
-                    <p className="font-crimson text-white/60 text-sm">
-                      {photo.placeholder}
-                    </p>
-                  </div>
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={photo.src} 
+                    alt={photo.caption}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-dancing text-xl text-pink-300 text-center">
+                  <h3 className="font-dancing text-xl text-pink-300 text-center mb-2">
                     {photo.caption}
                   </h3>
+                  <p className="font-crimson text-white/70 text-sm text-center italic">
+                    {photo.description}
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -80,7 +111,7 @@ const Gallery = () => {
               "No camera could ever capture the true radiance of your soul, no photograph could contain 
               the warmth of your presence. These images are merely echoes of your beauty—the real masterpiece 
               is you, living and breathing and blessing this world with your existence. You are art in motion, 
-              poetry in flesh, divinity in human form."
+              poetry in flesh, divinity in human form, my beloved Chikwere."
             </p>
             <Heart className="w-8 h-8 text-pink-400 mx-auto mt-6 animate-heart-beat" />
           </div>
