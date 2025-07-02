@@ -82,23 +82,19 @@ This is a personal romantic website built as a tribute to a loved one named Chik
 - Environment-based configuration
 - Replit-specific development plugins and error handling
 
-### Production Deployment (Vercel Ready)
-- **Static Site**: Optimized for Vercel static deployment
-- **Build Process**: Vite builds React app to static files in `dist/` folder
-- **Configuration**: `vercel.json` configured for seamless deployment
-- **No Backend Required**: Pure frontend application with static content
-- **Zero Configuration**: Vercel auto-detects Vite framework
+### Production Build
+- Vite builds React app to static files
+- esbuild bundles Express server
+- Single Node.js process serves both API and static files
+- PostgreSQL database connection via environment variables
 
-### Vercel Deployment
-- Build Command: `vite build`
-- Output Directory: `dist`
-- Framework: Auto-detected (Vite)
-- No environment variables required
-- Instant global CDN deployment
+### Environment Configuration
+- `NODE_ENV` controls development vs production behavior
+- `DATABASE_URL` required for PostgreSQL connection
+- Replit-specific environment detection and tooling
 
 ## Changelog
-- July 02, 2025: Initial setup and migration from Lovable to Replit
-- July 02, 2025: Prepared application for Vercel deployment with optimized configuration
+- July 02, 2025. Initial setup
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
