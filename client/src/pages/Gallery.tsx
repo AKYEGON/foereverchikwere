@@ -1,7 +1,6 @@
 
 import { Heart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import newPhoto from '@assets/2a2k_1751464466893.jpg';
 
 const Gallery = () => {
   const photos = [
@@ -64,12 +63,6 @@ const Gallery = () => {
       src: "/lovable-uploads/b06afff1-5ea1-44a5-a1d1-bc52f55d7c60.png",
       caption: "Love reflected in our eyes",
       description: "Together we are complete, forever intertwined"
-    },
-    {
-      id: 11,
-      src: newPhoto,
-      caption: "Strength and togetherness",
-      description: "Side by side, we face the world together"
     }
   ];
 
