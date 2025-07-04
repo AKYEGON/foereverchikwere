@@ -1,20 +1,23 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Star, Sparkles } from 'lucide-react';
+import { Heart, Star, Sparkles, Calendar } from 'lucide-react';
 import FloatingHearts from '@/components/FloatingHearts';
 import { Button } from '@/components/ui/button';
 
 const Landing = () => {
   const [showQuote, setShowQuote] = useState(false);
   const [showSecondSection, setShowSecondSection] = useState(false);
+  const [showAnniversary, setShowAnniversary] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowQuote(true), 1000);
     const timer2 = setTimeout(() => setShowSecondSection(true), 2000);
+    const timer3 = setTimeout(() => setShowAnniversary(true), 3000);
     return () => {
       clearTimeout(timer);
       clearTimeout(timer2);
+      clearTimeout(timer3);
     };
   }, []);
 
@@ -33,6 +36,26 @@ const Landing = () => {
               Chikwere
             </h2>
           </div>
+
+          {/* 4th Month Anniversary Section */}
+          {showAnniversary && (
+            <div className="animate-fade-in">
+              <div className="bg-gradient-to-r from-pink-500/20 to-purple-600/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
+                <Calendar className="w-12 h-12 text-pink-400 mx-auto mb-4 animate-pulse" />
+                <h3 className="font-dancing text-3xl text-pink-300 mb-4">
+                  🎉 Happy 4th Month Anniversary! 🎉
+                </h3>
+                <p className="font-crimson text-white/90 text-lg leading-relaxed italic mb-4">
+                  "Four months of pure bliss, four months of loving you deeper each day. 
+                  Every sunrise with you feels like the first, every moment a celebration of us. 
+                  Here's to countless more months of our beautiful love story, my darling Chikwere."
+                </p>
+                <div className="flex justify-center space-x-4 text-2xl animate-bounce">
+                  ❤️ 💕 🌙 ✨ 💖
+                </div>
+              </div>
+            </div>
+          )}
 
           {showQuote && (
             <div className="animate-fade-in">
@@ -67,6 +90,27 @@ const Landing = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="animate-bounce text-white/60 text-sm font-crimson">
             Scroll to explore this love letter
+          </div>
+        </div>
+      </section>
+
+      {/* Gratitude Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="animate-fade-in">
+            <h2 className="font-playfair text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 mb-12">
+              A Heart Full of Gratitude
+            </h2>
+            <div className="bg-gradient-to-r from-blue-500/20 to-pink-600/20 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">
+              <Heart className="w-12 h-12 text-pink-400 mx-auto mb-6 animate-heart-beat" />
+              <p className="font-crimson text-white/90 text-xl leading-relaxed italic">
+                "Thank you, my beloved Chikwere, for these incredible 4 months of pure joy. 
+                Thank you for choosing me every day, for loving me unconditionally, 
+                for being my strength when I'm weak and my light when I'm lost. 
+                Thank you for your patience, your kindness, your beautiful soul that makes my world complete. 
+                Every breath I take carries gratitude for you, my Moonlight."
+              </p>
+            </div>
           </div>
         </div>
       </section>

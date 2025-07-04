@@ -63,6 +63,12 @@ const Gallery = () => {
       src: "/lovable-uploads/b06afff1-5ea1-44a5-a1d1-bc52f55d7c60.png",
       caption: "Love reflected in our eyes",
       description: "Together we are complete, forever intertwined"
+    },
+    {
+      id: 11,
+      src: "/lovable-uploads/d1745a43-a655-4b67-8a78-d587beb2ff20.png",
+      caption: "Two hearts, one soul",
+      description: "Our love story written in strength and devotion - celebrating 4 months of pure bliss"
     }
   ];
 
